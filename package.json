@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bozeman42/weekend-4-gallery/issues"
   },
-  "homepage": "https://github.com/bozeman42/weekend-4-gallery#readme"
+  "homepage": "https://github.com/bozeman42/weekend-4-gallery#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }

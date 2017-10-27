@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>A Gallery</title>
+  <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="vendors/angular.min.js"></script>
+  <script src="scripts/client.js"></script>
+</head>
+<body ng-app="myApp">
+  <header>
+    <h1>Some pictures from my life.</h1>
+  </header>
+  <div ng-controller="GalleryController as gc">
+    {{gc.helloWorld}}
+    <div>
+
+    </div>
+  </div>
+</body>
+</html>

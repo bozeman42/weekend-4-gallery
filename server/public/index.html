@@ -11,13 +11,22 @@
   <script src="scripts/client.js"></script>
 </head>
 <body ng-app="myApp">
-  <header>
-    <h1>Some pictures from my life.</h1>
-  </header>
-  <div ng-controller="GalleryController as gc">
-    {{gc.helloWorld}}
+  <div class="container" ng-controller="GalleryController as gc">
+    <header class="row">
+      <h1>Some pictures from my life.</h1>
+    </header>
     <div>
-
+      <div class="col-md-4 col-sm-6" ng-repeat="image in gc.images">
+        <div class="thumbnail">
+          <div class="descDiv"  ng-click="gc.toggleDesc(image)">
+            <img class="img img-responsive" ng-class="{moveBehind: !image.mode}" ng-src="/images/{{image.filename}}">
+            <p class ="desc" ng-show="!image.mode">{{image.desc}}</p>
+          </div>
+          <div>
+            <button ng-click="gc.like(image)">{{image.likes}} Likes</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>

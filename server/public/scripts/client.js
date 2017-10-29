@@ -6,11 +6,17 @@ galleryApp.controller('GalleryController',function($http){
   gc.filenameIn = '';
   gc.descriptionIn='';
   
-  gc.toggleDesc = function(image){
-    if (image.mode === true){
-      image.views += 1;
-    }
-    image.mode = !image.mode;
+  gc.toggleDesc = function(image,index){
+    $http.put('/gallery/views/'+index)
+    .then(
+      function success(response){
+        console.log('views request',response);
+        gc.refreshGallery();
+      },
+      function error(error){
+        console.log('views request error',error);
+      }
+    );
   };
   
   gc.refreshGallery = function(){
@@ -18,6 +24,7 @@ galleryApp.controller('GalleryController',function($http){
     .then(
       function success(response){
         console.log('GET response:',response.data);
+        gc.images = [];
         gc.images = response.data;
       },
       function fail(error){
@@ -25,10 +32,21 @@ galleryApp.controller('GalleryController',function($http){
       }
     );
   };
+  
   gc.refreshGallery();
   
-  gc.like = function(image){
-    image.likes += 1;
+  gc.like = function(image,index){
+    console.log(index);
+    $http.put('/gallery/like/'+index)
+    .then(
+      function success(response){
+        console.log('Like request',response);
+        gc.refreshGallery();
+      },
+      function error(error){
+        console.log('Like request error',error);
+      }
+    );
   };
 
   gc.postNewImage = function(){

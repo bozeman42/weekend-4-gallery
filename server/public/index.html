@@ -23,14 +23,14 @@
       </form>
     </div>
     <div class="row">
-      <div class="col-md-4 col-sm-6" ng-repeat="image in gc.images">
+      <div class="col-md-4 col-sm-6" ng-repeat="image in gc.images track by $index">
         <div class="thumbnail">
-          <div class="descDiv"  ng-click="gc.toggleDesc(image)">
-            <img class="img img-responsive" ng-class="{moveBehind: !image.mode}" ng-src="/images/{{image.filename}}">
+          <div class="descDiv"  ng-click="gc.toggleDesc(image,$index)">
+            <img class="img img-responsive" ng-class="{blur: !image.mode}" ng-src="/images/{{image.filename}}">
             <p class ="desc" ng-show="!image.mode">{{image.desc}}</p>
           </div>
           <div>
-            <button class="btn btn-primary" ng-click="gc.like(image)">{{image.likes}} Likes</button>
+            <button class="btn btn-primary" ng-click="gc.like(image,$index)">{{image.likes}} Likes</button>
             <span>Views: {{image.views}}</span>
           </div>
         </div>

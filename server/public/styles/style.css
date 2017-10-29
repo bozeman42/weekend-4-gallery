@@ -1,6 +1,9 @@
 body {
-  background-color: burlywood;
-
+  background-color: #3E1929
+}
+.container {
+  background-color: #6E75A8;
+  border-radius: 50px;
 }
 .descDiv {
   text-align: center;
@@ -8,6 +11,7 @@ body {
   overflow: hidden;
   border-radius: 3px;
   float: left;
+  width: 100%;
 }
 
 .desc{
@@ -21,6 +25,7 @@ body {
 img {
   transition: 500ms;
   filter: blur(0px) brightness(100%);
+  margin: 0 auto;
 }
 
 .blur {
@@ -36,4 +41,21 @@ img {
 
 .col-md-4 {
   overflow: hidden;
+}
+
+.img-responsive {
+  height: 250px;
+}
+
+.thumbnailInfo {
+  padding: 10px;
+  color: whitesmoke;
+}
+
+.imgContainer {
+  background-color: #8D91C7;
+  padding: 5px;
+  margin: 10px 0;
+  border: solid 1px black;
+  border-radius: 10px;
 }

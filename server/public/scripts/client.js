@@ -2,13 +2,7 @@ var galleryApp = angular.module('myApp',[]);
 
 galleryApp.controller('GalleryController',function($http){
   var gc = this;
-  gc.images =
-  [{filename: 'amess.jpg',desc: "A description", likes: 0, views: 0, mode: true },
-  {filename: 'pileofstuff.jpg',desc: "A description", likes: 0, views: 0, mode: true },
-  {filename: 'amess.jpg',desc: "A description", likes: 0, views: 0, mode: true },
-  {filename: 'pileofstuff.jpg',desc: "A description", likes: 0, views: 0, mode: true },
-  {filename: 'amess.jpg',desc: "A description", likes: 0, views: 0, mode: true },
-  {filename: 'pileofstuff.jpg',desc: "A description", likes: 0, views: 0, mode: true }];
+  gc.images=[];
 
   gc.toggleDesc = function(image){
     if (image.mode === true){
@@ -16,8 +10,24 @@ galleryApp.controller('GalleryController',function($http){
     }
     image.mode = !image.mode;
   };
-
+  
+  gc.refreshGallery = function(){
+    $http.get('/gallery')
+    .then(
+      function success(response){
+        console.log('GET response:',response.data);
+        gc.images = response.data;
+      },
+      function fail(error){
+        console.log('GET error:', error);
+      }
+    );
+  };
+  gc.refreshGallery();
+  
   gc.like = function(image){
     image.likes += 1;
   };
+
+
 });

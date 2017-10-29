@@ -6,6 +6,7 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 3px;
 }
 
 .desc{
@@ -22,4 +23,8 @@ image {
 
 .moveBehind {
   filter: blur(3px) brightness(40%);
+}
+
+.formDiv {
+  padding: 20px;
 }

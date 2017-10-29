@@ -15,7 +15,14 @@
     <header class="row">
       <h1>Some pictures from my life.</h1>
     </header>
-    <div>
+    <div class="row formDiv">
+      <form name="imageIn" ng-submit="gc.postNewImage()">
+        <input placeholder="filename.ext" type="text" ng-model="gc.filenameIn" required>
+        <input placeholder="Description" type="text" ng-model="gc.descriptionIn" required>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+    <div class="row">
       <div class="col-md-4 col-sm-6" ng-repeat="image in gc.images">
         <div class="thumbnail">
           <div class="descDiv"  ng-click="gc.toggleDesc(image)">
@@ -23,7 +30,7 @@
             <p class ="desc" ng-show="!image.mode">{{image.desc}}</p>
           </div>
           <div>
-            <button ng-click="gc.like(image)">{{image.likes}} Likes</button>
+            <button class="btn btn-primary" ng-click="gc.like(image)">{{image.likes}} Likes</button>
             <span>Views: {{image.views}}</span>
           </div>
         </div>

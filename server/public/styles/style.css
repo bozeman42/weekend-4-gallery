@@ -5,6 +5,10 @@ body {
   background-color: #6E75A8;
   border-radius: 50px;
 }
+
+.galleryContainer{
+  display: flex;
+}
 .descDiv {
   text-align: center;
   position: relative;
@@ -20,6 +24,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.equalHeight .equalHeight-child:nth-child(3n+1) {
+  clear: left;
 }
 
 img {
@@ -43,13 +51,8 @@ img {
   overflow: hidden;
 }
 
-.img-responsive {
-  height: 250px;
-}
-
 .thumbnailInfo {
-  padding: 10px;
-  color: whitesmoke;
+  padding: 5px;
 }
 
 .imgContainer {

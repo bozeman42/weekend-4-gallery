@@ -22,16 +22,26 @@
         <button type="submit" class="btn btn-success">Submit</button>
       </form>
     </div>
-    <div class="row">
-      <div class="col-md-4 col-sm-6" ng-repeat="image in gc.images track by $index">
+    <div class="equalHeight">
+      <div class="col-md-4 col-sm-6 equalHeight-child" ng-repeat="image in gc.images track by $index" class="row">
         <div class="imgContainer">
           <div class="descDiv"  ng-click="gc.toggleDesc(image,$index)">
-            <img class="img img-responsive" ng-class="{blur: !image.mode}" ng-src="/images/{{image.filename}}">
+            <img class="img img-responsive galleryImage" ng-class="{blur: !image.mode}" ng-src="{{image.filename}}">
             <p class ="desc" ng-show="!image.mode">{{image.desc}}</p>
           </div>
           <div class="thumbnailInfo">
             <button class="btn btn-primary" ng-click="gc.like(image,$index)">{{image.likes}} Likes</button>
             <span>Views: {{image.views}}</span>
+            <button ng-click="gc.toggleComments(image,$index)" class="pull-right">Comments >>></button>
+          </div>
+          <div class="commentsDiv" ng-if="image.showComments">
+            <form ng-submit="gc.addComment(image,$index)">
+              <input type="text" ng-model="image.newComment">
+              <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+            <div>
+              <p ng-repeat="comment in image.comments">{{comment}}</p>
+          </div>
           </div>
         </div>
       </div>

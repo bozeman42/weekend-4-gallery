@@ -2,12 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 var images =
-[{filename: 'dellstour.jpg',desc: "Melissa and I at the Wisconsin Dells. The boat tour of the Lower Dells is fantastic!", likes: 0, views: 0, mode: true, comments: [] },
-{filename: 'jam.jpg',desc: "My sister and I playing music with a family friend.", likes: 0, views: 0, mode: true, comments: [] },
-{filename: 'jump.jpg',desc: "Melissa and I jumping for a photo with her family in Galveston, TX", likes: 0, views: 0, mode: true, comments: [] },
-{filename: '100fast.jpg',desc: 'Me and my ride at the Warroad, MN 4th of July races. In an interview after the race I stated that I wend A hundred fast."', likes: 0, views: 0, mode: true, comments: [] },
-{filename: 'amess.jpg',desc: "A description", likes: 0, views: 0, mode: true, comments: [] },
-{filename: 'pileofstuff.jpg',desc: "A description", likes: 0, views: 0, mode: true, comments: [] }];
+[{filename: '/images/dellstour.jpg',desc: "Melissa and I at the Wisconsin Dells. The boat tour of the Lower Dells is fantastic!", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
+{filename: '/images/jam.jpg',desc: "My sister and I playing music with a family friend.", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
+{filename: '/images/jump.jpg',desc: "Melissa and I jumping for a photo with her family in Galveston, TX", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
+{filename: '/images/100fast.jpg',desc: 'Me and my ride at the Warroad, MN 4th of July races. In an interview after the race I stated that I went A hundred fast."', likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
+{filename: '/images/amess.jpg',desc: "A description", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
+{filename: '/images/pileofstuff.jpg',desc: "A description", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' }];
 
 
 router.get('/',function(req,res){
@@ -39,7 +39,17 @@ router.put('/like/:id',function(req,res){
   res.sendStatus(200);
 });
 
-router.put('/comment/:id',function(req,res){
+router.put('/comments/toggle/:id',function(req,res){
+  var id = req.params.id;
+  images[id].showComments = !images[id].showComments;
+  res.sendStatus(200);
+});
 
+router.put('/comment/:id',function(req,res){
+  console.log(req.body);
+  var comment = req.body.newComment;
+  var id = req.params.id;
+  images[id].comments.push(comment);
+  res.sendStatus(200);
 });
 module.exports = router;

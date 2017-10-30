@@ -31,6 +31,8 @@ body {
   clear: left;
 }
 
+
+
 img {
   transition: 500ms;
   filter: blur(0px) brightness(100%);

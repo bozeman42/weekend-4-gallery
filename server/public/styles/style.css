@@ -27,9 +27,19 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.equalHeight .equalHeight-child:nth-child(3n+1) {
-  clear: left;
+@media (min-width: 992px){
+  .equalHeight .equalHeight-child:nth-child(3n+1) {
+    clear: left;
+  }
 }
+
+@media (max-width: 991px){
+  .equalHeight .equalHeight-child:nth-child(2n+1) {
+    clear: left;
+  }
+}
+
+
 
 
 

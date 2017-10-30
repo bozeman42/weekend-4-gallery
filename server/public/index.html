@@ -12,6 +12,7 @@
 </head>
 <body ng-app="myApp">
   <div class="container" ng-controller="GalleryController as gc">
+    
     <header class="row">
       <h1>Some pictures from my life.</h1>
     </header>
@@ -23,7 +24,7 @@
       </form>
     </div>
     <div class="equalHeight">
-      <div class="col-md-4 col-sm-6 equalHeight-child" ng-repeat="image in gc.images track by $index" class="row">
+      <div class="col-md-4 col-sm-6 equalHeight-child" ng-repeat="image in gc.images track by $index">
         <div class="imgContainer">
           <div class="descDiv"  ng-click="gc.toggleDesc(image,$index)">
             <img class="img img-responsive galleryImage" ng-class="{blur: !image.mode}" ng-src="{{image.filename}}">

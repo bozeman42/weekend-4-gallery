@@ -35,7 +35,7 @@ router.put('/views/:id', function(req,res){
 // like image
 router.put('/like/:id',function(req,res){
   var imgId = req.params.id;
-  images[imgDd].likes += 1;
+  images[imgId].likes += 1;
   res.sendStatus(200);
 });
 

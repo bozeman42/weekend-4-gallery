@@ -32,13 +32,6 @@ galleryApp.controller('GalleryController',function($http,$window){
       }
     );
   };
-  
-  gc.screenWidth = $window.innerWidth;
-  if (gc.screenWidth >= 992) {
-    gc.perRow = 3;
-  } else {
-    gc.perRow = 2;
-  }
 
   gc.toggleComments = function(image,index){
     $http.put('/gallery/comments/toggle/'+index)

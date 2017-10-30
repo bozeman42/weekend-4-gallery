@@ -67,3 +67,7 @@ img {
   font-style: italic;
   word-wrap: break-word;
 }
+
+h1 {
+  margin-left: 50px;
+}

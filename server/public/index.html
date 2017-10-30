@@ -32,7 +32,7 @@
           <div class="thumbnailInfo">
             <button class="btn btn-primary" ng-click="gc.like(image,$index)">{{image.likes}} Likes</button>
             <span>Views: {{image.views}}</span>
-            <button ng-click="gc.toggleComments(image,$index)" class="pull-right">Comments >>></button>
+            <button ng-click="gc.toggleComments(image,$index)" class="pull-right btn btn-primary">Comments >>></button>
           </div>
           <div class="commentsDiv" ng-if="image.showComments">
             <form ng-submit="gc.addComment(image,$index)">
@@ -40,7 +40,7 @@
               <button class="btn btn-success" type="submit">Submit</button>
             </form>
             <div>
-              <p ng-repeat="comment in image.comments">{{comment}}</p>
+              <p class="comment" ng-repeat="comment in image.comments">{{comment}}</p>
           </div>
           </div>
         </div>

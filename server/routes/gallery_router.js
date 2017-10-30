@@ -3,11 +3,11 @@ var router = express.Router();
 
 var images =
 [{filename: '/images/dellstour.jpg',desc: "Melissa and I at the Wisconsin Dells. The boat tour of the Lower Dells is fantastic!", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
+{filename: '/images/cotnplaytest.jpg',desc: "Playing one of our games with some Con of the North attendees", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
+{filename: '/images/100fast.jpg',desc: 'Me and my ride at the Warroad, MN 4th of July races. In an interview after the race I stated that I went A hundred fast."', likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
 {filename: '/images/jam.jpg',desc: "My sister and I playing music with a family friend.", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
 {filename: '/images/jump.jpg',desc: "Melissa and I jumping for a photo with her family in Galveston, TX", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
-{filename: '/images/100fast.jpg',desc: 'Me and my ride at the Warroad, MN 4th of July races. In an interview after the race I stated that I went A hundred fast."', likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
-{filename: '/images/amess.jpg',desc: "A description", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' },
-{filename: '/images/pileofstuff.jpg',desc: "A description", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' }];
+{filename: '/images/bdgkick.jpg',desc: "Brass Dog Games celebrating after a successful KickStarter campaign.", likes: 0, views: 0, mode: true, showComments: false, comments: [], newComment: '' }]
 
 
 router.get('/',function(req,res){

@@ -13,9 +13,10 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 5px;
   float: left;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .desc{
@@ -34,14 +35,13 @@ img {
   transition: 500ms;
   filter: blur(0px) brightness(100%);
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .blur {
   transition: 500ms;
   filter: blur(3px) brightness(40%);
 }
-
-
 
 .formDiv {
   padding: 20px;
@@ -52,13 +52,18 @@ img {
 }
 
 .thumbnailInfo {
-  padding: 5px;
 }
 
 .imgContainer {
   background-color: #8D91C7;
-  padding: 5px;
+  padding: 10px;
   margin: 10px 0;
   border: solid 1px black;
   border-radius: 10px;
+}
+
+.comment {
+  border-bottom: solid 1px rgb(77, 82, 136);
+  font-style: italic;
+  word-wrap: break-word;
 }
